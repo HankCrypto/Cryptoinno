@@ -1,4 +1,5 @@
 import { tools } from "../data/tools"
+import Link from "next/link"
 
 export default function ToolsPage() {
   return (
@@ -17,9 +18,12 @@ export default function ToolsPage() {
             key={tool.id}
             className="border rounded-lg p-6"
           >
-            <h2 className="text-xl font-semibold">
-              {tool.name}
-            </h2>
+           <Link
+  href={`/tools/${tool.slug}`}
+  className="text-xl font-semibold text-blue-600 underline"
+>
+  {tool.name}
+</Link>
 
             <p className="text-sm text-gray-500 mt-1">
               Category: {tool.category}
